@@ -17,14 +17,14 @@ public class UserController {
     public UserController(){
 
     }
-
+    
 
     //used to return all users
     @GetMapping("")
     public Iterable<User> getAllUser(){
         return userService.findAll();
     }
-    {/*
+
     //finds user by id returns null if not found
     @GetMapping("/{id}")
     public Optional<User>getUserById(@PathVariable(value ="id") int userID){
@@ -38,6 +38,7 @@ public class UserController {
         Optional<User> temp = userService.findById(userID);
 
         if(!temp.isPresent()){ return -1; }
+
         userService.deleteById(userID);
         return 0;
     }
@@ -53,5 +54,5 @@ public class UserController {
         }
         return true;
     }
-    */}
+
 }
